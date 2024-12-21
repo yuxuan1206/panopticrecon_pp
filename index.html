@@ -203,13 +203,25 @@
 
 <!-- </section> -->
 
-   <div class="container is-max-desktop">
+   <!-- <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay controls muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4" type="video/mp4">
       </video>
     </div>
-  </div> 
+  </div>  -->
+
+   <!-- Paper video. -->
+
+   <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <!-- <h2 class="title is-3">Method</h2>  -->
+      <div class="container">
+        <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+         <source src="./static/videos/teaser.mp4"
+                 type="video/mp4">
+        </video>
+  <!--/ Paper video. -->
 
   <!-- <div class="image-container">
     <div class="image-overlay"></div>
@@ -344,20 +356,6 @@
           </video>
     <!--/ Paper video. -->
 
-    <div class="row">
-            <!-- <div class="col-md-8 col-md-offset-2"> -->
-            <div class="columns is-centered has-text-centered">
-                <video class="video" width="100%" id="teaser" loop playsinline autoplay muted src="./static/videos/teaser.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-                <canvas height=0 class="videoMerge" id="teaserMerge"></canvas>
-			      </div>
-            <div class="col-md-8 col-md-offset-2">
-                <p class="text-center">
-                2DGS adopts (a) 2D oriented disks as surface elements and allows (b) high-quality rendering with gaussian splatting. <br> 
-                <span style="color:#DF62D3; font-size: 18px;"><b>Use the slider as the "splatter"</b></span>
-                </p>
-			      </div>
-      </div>
-
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -375,6 +373,21 @@
             </video>
         </div>
     <!--/ Paper video. -->
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+      <!-- <div class="columns is-centered has-text-centered"> -->
+          <video class="video" width="100%" id="teaser2" loop playsinline autoplay muted src="./static/videos/teaser.mp4" onplay="resizeAndPlay(this)" style="height: 10px;"></video>
+          <canvas height=0 class="videoMerge" id="teaserMerge"></canvas>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+          <p class="text-center">
+          2DGS adopts (a) 2D oriented disks as surface elements and allows (b) high-quality rendering with gaussian splatting. <br> 
+          <span style="color:#DF62D3; font-size: 18px;"><b>Use the slider as the "splatter"</b></span>
+          </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -424,7 +437,7 @@
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
-      <h3 class="title is-3">Gaussian Visualization</h3>
+      <h3 class="title is-3">Mesh Visualization</h3>
     </div>
 
    <p>
@@ -474,13 +487,8 @@
   archivePrefix={arXiv},
   primaryClass={cs.CV}
 }</code></pre>-->
-    <pre><code>@article{cheng2024gaussianpro,
-  title={GaussianPro: 3D Gaussian Splatting with Progressive Propagation},
-  author={Cheng, Kai and Long, Xiaoxiao and Yang, Kaizhi and Yao, Yao and Yin, Wei and Ma, Yuexin and Wang, Wenping and Chen, Xuejin},
-  journal={arXiv preprint arXiv:2402.14650},
-  year={2024}
-}
-}</code></pre>
+    <pre><code>...
+</code></pre>
     <!--<pre><code>@article{kchenguc23,
   author    = {Kai Cheng, Xiaoxiao Long, Wei Yin, Jin Wang, Zhiqiang Wu, Yuexin Ma, Kaixuan Wang, Xiaozhi Chen, Xuejin Chen},
   title     = {UC-NeRF},
