@@ -374,26 +374,47 @@
         </div>
     <!--/ Paper video. -->
 
-    <body>
-      <video id="video1" width="640" height="360" controls>
-          <source src="./static/videos/method.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-      <video id="video2" width="640" height="360" controls style="display:none;">
-          <source src="./static/videos/teaser.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-      <canvas id="video1Merge" width="640" height="360"></canvas>
-  
-      <script src="./static/js/video_comparison.js"></script>
-      <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              var video1 = document.getElementById('video1');
-              var video2 = document.getElementById('video2');
-              resizeAndPlay(video1);
-          });
-      </script>
-  </body>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Comparisons</h2>
+
+        <h3 class="title is-4">Comparison wtih 2DGS</h3>
+        <div class="content has-text-justified">
+          <p>
+            2DGS fails to reconstruct background geometry, while our method can reconstruct more detailed geometry for both foreground objects and backgrounds.
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/method.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
+        </div>
+        
+        <h3 class="title is-4">Comparison wtih SuGaR</h3>
+        <div class="content has-text-justified">
+          <p>
+            Compared with SuGaR, our method can reconstruct more detailed and smooth geometry for both foreground objects and backgrounds.
+          </p>
+        </div>
+        
+        <div class="content has-text-centered">
+          <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="./static/videos/teaser.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="xyalias9Merge"></canvas>
+        </div> 
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
