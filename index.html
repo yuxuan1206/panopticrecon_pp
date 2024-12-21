@@ -110,13 +110,12 @@
 
 
 <div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Motivation</h2>
+  <!-- <div class="column is-four-fifths"> -->
     <div class="content has-text-justified">
-    
-      <img src="./static/images/logo.png">
+      <img src="./static/images/logo.png"
+      width="150">
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 <section class="hero">
@@ -182,7 +181,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code(coming soon)</span>
                   </a>
               </span>
 
@@ -197,21 +196,16 @@
 
 <!-- <section class="hero teaser"> -->
 
-</section>
+<!-- </section> -->
 
    <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.MOV"
-                type="video/MOV">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
     </div>
   </div> 
+
   <!-- <div class="image-container">
     <div class="image-overlay"></div>
     <img src="./static/images/zipdemo1.png" alt="Image 1" class="image image1">
@@ -301,28 +295,15 @@
             <strong>We propose PanopticRecon++, an end-to-end open-vocabulary panoptic reconstruction method based on cross-attention. Our key idea is to model instances using explicit queries, enabling the construction of spatially aware queries and keys for attention map computation, thereby incorporating 3D spatial priors without post-processing and facilitating consistent instance-level semantic.</strong> 
             Specifically, we propose learnable Gaussian-modulated instance tokens as queries, aligned with 2D instance IDs across frames by linear assignment. Incorporating segmentation features and spatial prior into the attention map, we avoid the redundant instance IDs caused by limited field of view. A parameter-free panoptic head ensures semantic-instance segmentation consistency. Furthermore, token numbers are dynamically adjusted during training to match the number of objects. 
           </p>
-          <p>
+          <!-- <p>
           We evaluate PanopticRecon++'s 3D and 2D segmentation and reconstruction performance on simulated and real-world datasets. Experiments demonstrate that PanopticRecon++ outperforms other open-vocabulary methods, particularly in scenes with numerous objects of varying sizes.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
     <br>
-    <div class="container is-max-desktop">
-    
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <div class="container">
-              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/teaser.MOV"
-                      type="video/MOV">
-              </video>
-          </div>
-          </div>
-        </div>
-    </div>
 
     <!-- Motivation. -->
     <div class="columns is-centered has-text-centered">
@@ -332,10 +313,42 @@
         
           <img src="./static/images/motivation.png">
           <p>
-            The sparse SfM points and less-constrained densification strategies of 3DGS pose challenges in optimizing 3D Gaussians, particularly for textureless areas. 
-            3DGS generates incorrect Gaussians (blue circle) to be over-fitted on the training images, leading to a noticeable performance drop in novel view rendering with erroneous geometries.
+            End-to-end open-vocabulary panoptic reconstruction by 2D foundation model faces three challenges:  
+            <p>
+              <strong>1) Misalignment:</strong> 2D instance IDs across frames are not align. 
+              <br>
+              <strong>2) Ambiguity:</strong> Due to the limited FoV, two objects that never co-occur in an image can be the same or different instances. 
+              <br>
+              <strong>3) Inconsistency:</strong> The semantic and instance segmentations obtained from two independent networks are inconsistent. 
+            </p>
+            We align 2D instance IDs by instance tokens linear assignment, eliminate the ambiguity of 3D instances by incorporating spatial prior, and output consistent semantic and instance masks by a parameter-free panoptic head, generating the geometric mesh with panoptic masking that allows for multi-branch novel-view synthesis.
           </p>
         </div>
+      </div>
+    </div>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2> 
+        <div class="container">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+           <source src="./static/videos/method.mp4"
+                   type="video/mp4">
+          </video>
+    <!--/ Paper video. -->
+
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <video class="video" width="100%" id="teaser" loop playsinline autoplay muted src="./static/videos/teaser.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="teaserMerge"></canvas>
+      </div>
+          <div class="col-md-8 col-md-offset-2">
+              <p class="text-center">
+              2DGS adopts (a) 2D oriented disks as surface elements and allows (b) high-quality rendering with gaussian splatting. <br> 
+              <span style="color:#DF62D3; font-size: 18px;"><b>Use the slider as the "splatter"</b></span>
+              </p>
       </div>
     </div>
 
