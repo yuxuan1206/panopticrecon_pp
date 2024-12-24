@@ -114,14 +114,6 @@
 </nav>
 
 
-<div class="columns is-centered has-text-centered">
-  <!-- <div class="column is-four-fifths"> -->
-    <div class="content has-text-justified">
-      <img src="./static/images/logo.png"
-      width="150">
-    </div>
-  <!-- </div> -->
-</div>
 
 <section class="hero">
   <div class="hero-body">
@@ -130,26 +122,37 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Leverage Cross-Attention for End-to-End Open-Vocabulary Panoptic Reconstruction</h1>
           <!-- <h1 class="is-size-4 publication-authors">IROS 2024 (Oral)</h1> -->
+
+          <div class="columns is-centered has-text-centered">
+          <!-- <div class="column is-four-fifths"> -->
+            <div class="content has-text-justified">
+              <img src="./static/images/logo.png"
+              width="120">
+            </div>
+          <!-- </div> -->
+        </div>
+
+
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block"> 
-             Xuan Yu</a>,</span>
+             Xuan Yu</a><sup>1</sup>,</span>
               <span class="author-block">
-                Yuxuan Xie</a>,</span>
+                Yuxuan Xie</a><sup>1</sup>,</span>
               <span class="author-block"> 
-                 Yili Liu</a>,</span>
+                 Yili Liu</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="https://scholar.google.com.hk/citations?user=RiX5SJUAAAAJ&hl=zh-CN" target="_blank">Sitong Mao</a>,</span>
+                    <a href="https://scholar.google.com.hk/citations?user=RiX5SJUAAAAJ&hl=zh-CN" target="_blank">Sitong Mao</a><sup>2</sup>,</span>
                       <span class="author-block">
-                        <a href="https://scholar.google.com/citations?user=d5qY3q0AAAAJ&hl=en" target="_blank">Shunbo Zhou</a>,</span>
+                        <a href="https://scholar.google.com/citations?user=d5qY3q0AAAAJ&hl=en" target="_blank">Shunbo Zhou</a><sup>2</sup>,</span>
                         <span class="author-block">
-                          <a href="https://scholar.google.com.hk/citations?user=dNAbVgIAAAAJ&hl=zh-CN" target="_blank">Haojian Lu</a>,</span>
+                          <a href="https://scholar.google.com.hk/citations?user=dNAbVgIAAAAJ&hl=zh-CN" target="_blank">Haojian Lu</a><sup>1</sup>,</span>
                           <span class="author-block">
-                            <a href="https://scholar.google.com/citations?user=1hI9bqUAAAAJ&hl=en" target="_blank">Rong Xiong</a>,</span>
+                            <a href="https://scholar.google.com/citations?user=1hI9bqUAAAAJ&hl=en" target="_blank">Rong Xiong</a><sup>1</sup>,</span>
                                 <span class="author-block">
-                                  <a href="https://yiyiliao.github.io/" target="_blank">Yiyi Liao</a>,</span>
+                                  <a href="https://yiyiliao.github.io/" target="_blank">Yiyi Liao</a><sup>1</sup>,</span>
                                       <span class="author-block">
-                                        <a href="https://ywang-zju.github.io/" target="_blank">Yue Wang</a><sup>*</sup>
+                                        <a href="https://ywang-zju.github.io/" target="_blank">Yue Wang</a><sup>1</sup><sup>*</sup>
                                       </div>
 
           <div class="is-size-5 publication-authors">
@@ -357,7 +360,7 @@
     <!--/ Paper video. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Comparison</h2> 
         <div class="container">
@@ -371,8 +374,8 @@
              <source src="./static/videos/comparison_indoor.mp4"
                      type="video/mp4">
             </video>
-        </div>
-    <!--/ Paper video. -->
+        </div> -->
+    <!-- / Paper video. -->
 
   </div>
 </section>
@@ -383,9 +386,9 @@
     <!-- Results. -->
     <div class="columns is-centered ">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Comparisons</h2>
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Comparison</h2>
 
-        <h3 class="title is-4">Comparison wtih 2DGS</h3>
+        <h3 class="title is-4">Panoptic / Semantic Mesh</h3>
         <div class="content has-text-justified">
           <p>
             2DGS fails to reconstruct background geometry, while our method can reconstruct more detailed geometry for both foreground objects and backgrounds.
@@ -393,11 +396,11 @@
         </div>
         
         <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/method.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/mesh_1.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         </div>
         
-        <h3 class="title is-4">Comparison wtih SuGaR</h3>
+        <h3 class="title is-4">Panoptic / Semantic Rendering</h3>
         <div class="content has-text-justified">
           <p>
             Compared with SuGaR, our method can reconstruct more detailed and smooth geometry for both foreground objects and backgrounds.
@@ -408,6 +411,26 @@
           <video class="video" width="100%" id="xyalias9" loop playsinline autoplay muted src="./static/videos/teaser.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias9Merge"></canvas>
         </div> 
+
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Robotics Simulator</h2>
+          <div class="container">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/simulator.mp4"
+                    type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              2DGS fails to reconstruct background geometry, while our method can reconstruct more detailed geometry for both foreground objects and backgrounds.
+            </p>
+          </div>
+        </div>
+        
+
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered" style="margin-top: -30px">More Results</h2>
+        </div>
 
       </div>
     </div>
