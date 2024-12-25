@@ -7,8 +7,7 @@ function playVids(videoId) {
     var vid = document.getElementById(videoId);
 
     var position = 0.5;
-    // var vidWidth = vid.videoWidth/2;
-    var vidWidth = vid.videoWidth/3;
+    var vidWidth = vid.videoWidth/2;
     var vidHeight = vid.videoHeight;
 
     var mergeContext = videoMerge.getContext("2d");
@@ -38,7 +37,6 @@ function playVids(videoId) {
             var colStart = (vidWidth * position).clamp(0.0, vidWidth);
             var colWidth = (vidWidth - (vidWidth * position)).clamp(0.0, vidWidth);
             mergeContext.drawImage(vid, colStart+vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
-            mergeContext.drawImage(vid, colStart+2*vidWidth, 0, colWidth, vidHeight, colStart+vidWidth, 0, colWidth, vidHeight);
             requestAnimationFrame(drawLoop);
 
             
@@ -110,7 +108,7 @@ Number.prototype.clamp = function(min, max) {
 function resizeAndPlay(element)
 {
   var cv = document.getElementById(element.id + "Merge");
-  cv.width = element.videoWidth/3;
+  cv.width = element.videoWidth/2;
   cv.height = element.videoHeight;
   element.play();
   element.style.height = "0px";  // Hide video without stopping it
