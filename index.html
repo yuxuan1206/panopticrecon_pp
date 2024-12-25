@@ -49,6 +49,9 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="./static/js/video_comparison.js"></script>
 
+  <link rel="stylesheet" href="./static/css/dics.min.css">
+  <script src="./static/js/dics.min.js"></script>
+
   <style>
     .video-container1 {
       display: flex;
@@ -378,6 +381,33 @@
 
   </div>
 </section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <br>
+    <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Reconstructions on Mip-NeRF 360 Dataset</h2>
+    <div class="container">
+      
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-treehill">
+          <video poster="" id="treehill" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mesh-replica-pvlff-compress.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-flowers">
+          <video poster="" id="flowers" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mesh-replica-PL-compress.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container is-max-desktop">
