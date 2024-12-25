@@ -7,7 +7,8 @@ function playVids(videoId) {
     var vid = document.getElementById(videoId);
 
     var position = 0.5;
-    var vidWidth = vid.videoWidth/2;
+    // var vidWidth = vid.videoWidth/2;
+    var vidWidth = vid.videoWidth/3;
     var vidHeight = vid.videoHeight;
 
     var mergeContext = videoMerge.getContext("2d");

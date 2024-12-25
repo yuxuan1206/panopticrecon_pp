@@ -311,9 +311,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper presents an end-to-end open-vocabulary panoptic reconstruction method using a 2D vision-language model (VLM). We identify three key challenges: 1) 2D instance IDs misalignment across frames, 2) ambiguity in instance association for objects that never co-occur in an image, and 3) inconsistency between semantic and instance segmentation  from independent networks.
-            <strong>We propose PanopticRecon++, an end-to-end open-vocabulary panoptic reconstruction method based on cross-attention. Our key idea is to model instances using explicit queries, enabling the construction of spatially aware queries and keys for attention map computation, thereby incorporating 3D spatial priors without post-processing and facilitating consistent instance-level semantic.</strong> 
-            Specifically, we propose learnable Gaussian-modulated instance tokens as queries, aligned with 2D instance IDs across frames by linear assignment. Incorporating segmentation features and spatial prior into the attention map, we avoid the redundant instance IDs caused by limited field of view. A parameter-free panoptic head ensures semantic-instance segmentation consistency. Furthermore, token numbers are dynamically adjusted during training to match the number of objects. 
+            Open-vocabulary panoptic reconstruction offers comprehensive scene understanding, enabling advances in embodied robotics and photorealistic simulation. In this paper, <strong> we propose PanopticRecon++, an end-to-end method that formulates panoptic reconstruction through a novel cross-attention perspective. This perspective models the relationship between 3D instances (as <i> queries </i>) and the scene’s 3D embedding field (as <i>keys</i>) through their attention map.
+    Unlike existing methods that separate the optimization of queries and keys or overlook spatial proximity, PanopticRecon++ introduces \textit{learnable 3D Gaussians} as instance queries. This formulation injects 3D spatial priors to preserve proximity while maintaining end-to-end optimizability. </strong> Moreover, this query formulation facilitates the alignment of 2D open-vocabulary instance IDs across frames by leveraging optimal linear assignment with instance masks rendered from the queries. Additionally, we ensure semantic-instance segmentation consistency by fusing query-based instance segmentation probabilities with semantic probabilities in a novel panoptic head supervised by a panoptic loss.  During training, the number of instance query tokens dynamically adapts to match the number of objects. PanopticRecon++ shows competitive performance in terms of 3D and 2D segmentation and reconstruction performance on both simulation and real-world datasets, and demonstrates a user case as a robot simulator. 
           </p>
           <!-- <p>
           We evaluate PanopticRecon++'s 3D and 2D segmentation and reconstruction performance on simulated and real-world datasets. Experiments demonstrate that PanopticRecon++ outperforms other open-vocabulary methods, particularly in scenes with numerous objects of varying sizes.
@@ -396,7 +395,7 @@
         </div>
         
         <div class="content has-text-centered">
-          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/mesh_1.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <video class="video" width="100%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/mesh-replica.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
           <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         </div>
         
@@ -422,14 +421,14 @@
           </div>
           <div class="content has-text-justified">
             <p>
-              2DGS fails to reconstruct background geometry, while our method can reconstruct more detailed geometry for both foreground objects and backgrounds.
+            Jackal UGV starts navigation in Gazebo with the meshes generated from PanopticRecon++ trained on ScanNet++. 
             </p>
           </div>
         </div>
         
 
         <div class="column is-full-width">
-          <h2 class="title is-3 has-text-centered" style="margin-top: -30px">More Results</h2>
+          <h2 class="title is-3 has-text-centered" style="margin-top: +30px">More Results</h2>
         </div>
 
       </div>
