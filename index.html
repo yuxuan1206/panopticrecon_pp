@@ -394,7 +394,7 @@
         <h3 class="title is-4">Panoptic / Semantic Mesh</h3>
         <div class="content has-text-justified">
           <p>
-            2DGS fails to reconstruct background geometry, while our method can reconstruct more detailed geometry for both foreground objects and backgrounds.
+            PVLFF has over segmentation and weak semantic segmentation accuracy, while our method can segment object-level instance and demonstrate high accuracy of panoptic/semantic segmentation and reconstruction quality.
           </p>
         </div>
         
@@ -402,6 +402,12 @@
         <video class="video" width="45%" id="xyalias1" loop playsinline autoplay muted src="./static/videos/mesh-replica-pvlff-compress.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
         <canvas height=0 class="videoMerge" id="xyalias1Merge"></canvas>
         <!-- </div> -->
+
+        <div class="content has-text-justified">
+          <p>
+            Panoptic Lifting relies only on 2D VLM mask observations without any 3D spatial prior, suffering from FoV limitation, resulting in some tables and chairs in different rooms have the same ID, while our method solves this problem by introducing 3D instance spatial prior.
+          </p>
+        </div>
 
         <!-- <div class="content has-text-centered"> -->
         <video class="video" width="45%" id="xyalias2" loop playsinline autoplay muted src="./static/videos/mesh-replica-PL-compress.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
@@ -411,7 +417,7 @@
         <h3 class="title is-4">Panoptic / Semantic Rendering</h3>
         <div class="content has-text-justified">
           <p>
-            Compared with SuGaR, our method can reconstruct more detailed and smooth geometry for both foreground objects and backgrounds.
+            Compared with Panoptic Lifting, our method can reconstruct more detailed and smooth geometry for both foreground objects and backgrounds.
           </p>
         </div>
         
